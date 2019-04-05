@@ -173,6 +173,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TransactionManagerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -246,6 +247,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\TransactionManager\Index.cshtml" />
+    <Content Include="Views\TransactionManager\Create.cshtml" />
+    <Content Include="Views\TransactionManager\Edit.cshtml" />
+    <Content Include="Views\TransactionManager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -254,6 +259,24 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PACApp.Core\PACApp.Core.csproj">
+      <Project>{5e4afa1c-f7df-4685-b396-9ba61a0e6726}</Project>
+      <Name>PACApp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PACApp.DataAccess.InMemory\PACApp.DataAccess.InMemory.csproj">
+      <Project>{740f2729-4005-4c62-a0f5-0759f9ac75cf}</Project>
+      <Name>PACApp.DataAccess.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PACApp.DataAccess.SQL\PACApp.DataAccess.SQL.csproj">
+      <Project>{8c93abfb-3d2e-4b57-8e47-ee339036c01e}</Project>
+      <Name>PACApp.DataAccess.SQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PACApp.Services\PACApp.Services.csproj">
+      <Project>{a828f9ec-9128-47ec-98d2-e67c00e814c9}</Project>
+      <Name>PACApp.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

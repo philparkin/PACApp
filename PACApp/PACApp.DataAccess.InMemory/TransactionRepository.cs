@@ -15,7 +15,7 @@ namespace PACApp.DataAccess.InMemory
 
         public TransactionRepository()
         {
-            transactions = cache["Transactions"] as List<Transaction>;
+            transactions = cache["transactions"] as List<Transaction>;
             if (transactions == null)
             {
                transactions = new List<Transaction>();
