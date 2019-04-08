@@ -173,6 +173,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TransactionCategoryManagerController.cs" />
     <Compile Include="Controllers\TransactionManagerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -249,8 +250,12 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\TransactionManager\Index.cshtml" />
     <Content Include="Views\TransactionManager\Create.cshtml" />
-    <Content Include="Views\TransactionManager\Edit.cshtml" />
     <Content Include="Views\TransactionManager\Delete.cshtml" />
+    <Content Include="Views\TransactionCategoryManager\Index.cshtml" />
+    <Content Include="Views\TransactionCategoryManager\Create.cshtml" />
+    <Content Include="Views\TransactionCategoryManager\Delete.cshtml" />
+    <Content Include="Views\TransactionManager\Edit.cshtml" />
+    <Content Include="Views\TransactionCategoryManager\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

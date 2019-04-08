@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PACApp.Core.Models;
+using PACApp.Core.ViewModels;
 using PACApp.DataAccess.InMemory;
 
 namespace PACApp.WebUI.Controllers
@@ -12,9 +13,12 @@ namespace PACApp.WebUI.Controllers
         
     {
         TransactionRepository context;
+        TransactionCategoryRepository transactionCategories;
+
         public TransactionManagerController()
         {
             context = new TransactionRepository();
+            transactionCategories = new TransactionCategoryRepository();
         }
         // GET: TransactionManager
         public ActionResult Index()        
@@ -25,8 +29,11 @@ namespace PACApp.WebUI.Controllers
 
         public ActionResult Create()
         {
-            Transaction transaction = new Transaction();
-            return View(transaction);
+            TransactionManagerViewModel viewModel = new TransactionManagerViewModel();
+
+            viewModel.Transaction = new Transaction();
+            viewModel.TransactionCategories = transactionCategories.Collection();
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -54,7 +61,10 @@ namespace PACApp.WebUI.Controllers
             }
             else
             {
-                return View(transaction);
+                TransactionManagerViewModel viewModel = new TransactionManagerViewModel();
+                viewModel.Transaction = transaction;
+                viewModel.TransactionCategories = transactionCategories.Collection();
+                return View(viewModel);
             }
         }
 
