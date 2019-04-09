@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Models\TransactionCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

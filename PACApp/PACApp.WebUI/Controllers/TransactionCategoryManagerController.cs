@@ -10,10 +10,10 @@ namespace PACApp.WebUI.Controllers
 {
     public class TransactionCategoryManagerController : Controller
     {
-        TransactionCategoryRepository context;
+        InMemoryRepository<TransactionCategory> context;
         public TransactionCategoryManagerController()
         {
-            context = new TransactionCategoryRepository();
+            context = new InMemoryRepository<TransactionCategory>();
         }
         // GET: TransactionCategoryManager
         public ActionResult Index()

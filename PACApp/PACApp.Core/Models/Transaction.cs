@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace PACApp.Core.Models
 {
-    public class Transaction
+    public class Transaction : BaseEntity
     {
-        public string Id { get; set; }
-
+        
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
@@ -20,9 +19,5 @@ namespace PACApp.Core.Models
 
         public string Category { get; set; }
 
-        public Transaction()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
-    }
+       }
 }

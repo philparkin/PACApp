@@ -12,13 +12,13 @@ namespace PACApp.WebUI.Controllers
     public class TransactionManagerController : Controller
         
     {
-        TransactionRepository context;
-        TransactionCategoryRepository transactionCategories;
+        InMemoryRepository<Transaction> context;
+        InMemoryRepository<TransactionCategory> transactionCategories;
 
         public TransactionManagerController()
         {
-            context = new TransactionRepository();
-            transactionCategories = new TransactionCategoryRepository();
+            context = new InMemoryRepository<Transaction>();
+            transactionCategories = new InMemoryRepository<TransactionCategory>();
         }
         // GET: TransactionManager
         public ActionResult Index()        

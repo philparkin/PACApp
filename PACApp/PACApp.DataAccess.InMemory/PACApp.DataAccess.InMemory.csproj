@@ -42,9 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InMemoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TransactionCategoryRepository.cs" />
-    <Compile Include="TransactionRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PACApp.Core\PACApp.Core.csproj">

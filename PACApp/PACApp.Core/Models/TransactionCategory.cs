@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace PACApp.Core.Models
 {
-    public class TransactionCategory
+    public class TransactionCategory : BaseEntity
     {
-        public string Id { get; set; }
+       
+        [MaxLength(50)]
+        [MinLength(1)]
         public string Category { get; set; }
         public Boolean Taxable { get; set; }
 
-        public TransactionCategory()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
+      
     }
 }
