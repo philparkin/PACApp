@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PACApp.Core.Contracts;
 using PACApp.Core.Models;
 using PACApp.Core.ViewModels;
 using PACApp.DataAccess.InMemory;
@@ -12,13 +13,13 @@ namespace PACApp.WebUI.Controllers
     public class TransactionManagerController : Controller
         
     {
-        InMemoryRepository<Transaction> context;
-        InMemoryRepository<TransactionCategory> transactionCategories;
+        IRepository<Transaction> context;
+        IRepository<TransactionCategory> transactionCategories;
 
-        public TransactionManagerController()
+        public TransactionManagerController(IRepository<Transaction> transactionContext, IRepository<TransactionCategory> transactionCategoryContext)
         {
-            context = new InMemoryRepository<Transaction>();
-            transactionCategories = new InMemoryRepository<TransactionCategory>();
+            context = transactionContext;
+            transactionCategories = transactionCategoryContext;
         }
         // GET: TransactionManager
         public ActionResult Index()        

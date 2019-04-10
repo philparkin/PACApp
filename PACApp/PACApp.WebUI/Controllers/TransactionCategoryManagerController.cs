@@ -1,4 +1,5 @@
-﻿using PACApp.Core.Models;
+﻿using PACApp.Core.Contracts;
+using PACApp.Core.Models;
 using PACApp.DataAccess.InMemory;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,10 @@ namespace PACApp.WebUI.Controllers
 {
     public class TransactionCategoryManagerController : Controller
     {
-        InMemoryRepository<TransactionCategory> context;
-        public TransactionCategoryManagerController()
+        IRepository<TransactionCategory> context;
+        public TransactionCategoryManagerController(IRepository<TransactionCategory> context)
         {
-            context = new InMemoryRepository<TransactionCategory>();
+            this.context = context;
         }
         // GET: TransactionCategoryManager
         public ActionResult Index()
