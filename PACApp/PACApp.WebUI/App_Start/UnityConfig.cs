@@ -1,6 +1,7 @@
 using PACApp.Core.Contracts;
 using PACApp.Core.Models;
 using PACApp.DataAccess.InMemory;
+using PACApp.DataAccess.SQL;
 using System;
 
 using Unity;
@@ -45,8 +46,8 @@ namespace PACApp.WebUI
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
-            container.RegisterType<IRepository<Transaction>, InMemoryRepository<Transaction>>();
-            container.RegisterType<IRepository<TransactionCategory>, InMemoryRepository<TransactionCategory>>();
+            container.RegisterType<IRepository<Transaction>, SQLRepository<Transaction>>();
+            container.RegisterType<IRepository<TransactionCategory>, SQLRepository<TransactionCategory>>();
         }
     }
 }
